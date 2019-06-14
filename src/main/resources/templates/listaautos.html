@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h5>Listado de Vehiculos</h5>
+<div class="col-md-12" >
+    <a th:href="@{/vehiculo/add}" class="btn btn-primary">Agregar vehiculo</a>
+</div>
+<hr>
+<div th:switch="vehiculos">
+    <div th:case="*">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Precio</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="vehiculo : ${vehiculos}">
+                <th scope="row" th:text="${vehiculo.id}"></th>
+                <td th:text="${vehiculo.marca}"></td>
+                <td th:text="${vehiculo.modelo}"></td>
+                <td th:text="${vehiculo.preciorent}"></td>
+
+                <td class="text-right">
+                    <div class="btn-group">
+                        <a th:href="@{/vehiculo/edit/{id} (id=${vehiculo.id}) }"
+                           class="btn btn-primary btn-sm">Editar</a>
+                        <a th:href="@{/vehiculo/delete/{id} (id=${vehiculo.id}) }"
+                           class="btn btn-danger btn-sm">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

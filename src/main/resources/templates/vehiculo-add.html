@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Agregar vehiculo</title>
+</head>
+<body>
+
+<div class="container">
+    <h3>Agregar vehiculo</h3>
+    <div>
+
+        <form action="#" method="post"
+            th:object="${vehiculo}"
+            th:action="@{/vehiculo/save}"
+            >
+
+            <div class="form-group">
+                <label for="marca">Nombre</label>
+                <input type="text" id="marca"
+                       class="form-controller"
+                       placeholder="ingrese marca"
+                       th:field="*{marca}">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" id="modelo"
+                       class="form-controller"
+                       placeholder="ingrese modelo"
+                       th:field="*{modelo}">
+            </div>
+
+            <div class="form-group">
+                <label for="preciorent">Precio</label>
+                <input type="text" id="preciorent"
+                       class="form-controller"
+                       placeholder="ingrese precio renta:"
+                       th:field="*{preciorent}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Agregar vehiculo
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+
+</body>
+</html>
