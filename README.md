@@ -7,14 +7,14 @@ sitio web de alquiler vehiculos online
 
 
 Se utilizaron:
-Spring Boot
-Maven
-H2
-Thymeleaf
-lombok
-JPA
-JDBC
-devtools
+/ Spring Boot / 
+/ Maven /
+/ H2 /
+/ Thymeleaf /
+/ lombok /
+/ JPA /
+/ JDBC /
+/ devtools /
 
 
 
